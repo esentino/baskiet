@@ -1,0 +1,8 @@
+<h1>{{ object.name }}</h1>
+{% for pib in object.productinbaskiet_set.all %}
+{{ pib }}
+{% endfor %}
+<form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Save">
+</form>
